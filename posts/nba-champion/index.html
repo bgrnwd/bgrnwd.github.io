@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <title>Where are NBA Champions drafted?</title>
+</head><body><nav class="wrapper">
+    <div class="nav-container">
+        <div class="home">
+            <a href="/">
+                <h1 class="nav-title">Brian Greenwood</h1>
+            </a>
+        </div>
+        <div class="menu">
+            <ul>
+                
+                
+                    <li>
+                        <a href="/posts/" >
+                            <span>Blog</span>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/bgrnwd" target="_blank">
+                            <span>Code</span>
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+<main class="wrapper">
+    <div class="single">
+        August 08, 2020
+        <h1>Where are NBA Champions drafted?</h1>
+        <p>I recently logged on to my <a href="https://www.kaggle.com/">Kaggle</a> profile for the first time in years and stumbled across a &ldquo;dataset&rdquo; I made in 2018. The dataset includes the top five players by playoff minutes from every NBA champion team from 2000 through 2019 and where each team’s top 5 players were selected in their respective drafts. Building a championship-winning team is a difficult task and I wanted to see what information could be gleaned by looking at the top of those rosters. Does building a championship team rely on picking projected stars early? Or do certain teams who pick later in the draft just consistently have the ability to identify hidden talent and develop it? Or is it a little bit of both?</p>
+<h2 id="data">Data</h2>
+<p>I focused on the NBA champion teams from 2000 through 2019 because this covers all seasons this century and conveniently excludes any championship teams that would have had a player drafted before 1989, the first year the draft went to 2 rounds (1999 champion San Antonio Spurs member <a href="https://www.basketball-reference.com/players/e/eliema01.html">Mario Elie</a> was the last player who won a championship and was drafted before 1989). Prior to 1989, the draft had many more picks which would have added complexity to the dataset. The current NBA Draft spans 2 rounds of 30 picks. Some players in the dataset are assigned to “pick 61” to account for that fact that they went un-drafted. All data was collected from <a href="https://www.basketball-reference.com/">Basketball Reference</a> manually (ouch! Were I to do this over again, I would have done this programmatically). Here’s what the data looks like for the 2019 Toronto Raptors:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#000">&#34;year&#34;</span>: <span style="color:#1c01ce">2019</span>,
+    <span style="color:#000">&#34;team&#34;</span>: <span style="color:#c41a16">&#34;Toronto Raptors&#34;</span>,
+    <span style="color:#000">&#34;players&#34;</span>:[
+        {
+            <span style="color:#000">&#34;name&#34;</span>: <span style="color:#c41a16">&#34;Kawhi Leonard&#34;</span>,
+            <span style="color:#000">&#34;pick&#34;</span>: <span style="color:#1c01ce">15</span>
+        },
+        {
+            <span style="color:#000">&#34;name&#34;</span>: <span style="color:#c41a16">&#34;Kyle Lowry&#34;</span>,
+            <span style="color:#000">&#34;pick&#34;</span>: <span style="color:#1c01ce">24</span>
+        },
+        {
+            <span style="color:#000">&#34;name&#34;</span>: <span style="color:#c41a16">&#34;Pascal Siakam&#34;</span>,
+            <span style="color:#000">&#34;pick&#34;</span>: <span style="color:#1c01ce">27</span>
+        },
+        {
+            <span style="color:#000">&#34;name&#34;</span>: <span style="color:#c41a16">&#34;Marc Gasol&#34;</span>,
+            <span style="color:#000">&#34;pick&#34;</span>: <span style="color:#1c01ce">48</span>
+        },
+        {
+            <span style="color:#000">&#34;name&#34;</span>: <span style="color:#c41a16">&#34;Danny Green&#34;</span>,
+            <span style="color:#000">&#34;pick&#34;</span>: <span style="color:#1c01ce">46</span>
+        }
+    ]
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>I wrote a small script that computes the average draft position of the top five players for each individual championship team and the average draft position of the top five players of all championship teams over the past 20 years. No de-duplication was done, so Lebron winning with the Miami Heat in 2012 and 2013 would count twice for pick 1. All fractional picks were rounded to the nearest integer.</p>
+<h2 id="analysis">Analysis</h2>
+<table>
+<thead>
+<tr>
+<th>Year</th>
+<th>Team</th>
+<th>Average Draft Position</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2019</td>
+<td>Toronto Raptors</td>
+<td>32</td>
+</tr>
+<tr>
+<td>2018</td>
+<td>Golden State Warriors</td>
+<td>14</td>
+</tr>
+<tr>
+<td>2017</td>
+<td>Golden State Warriors</td>
+<td>14</td>
+</tr>
+<tr>
+<td>2016</td>
+<td>Cleveland Cavaliers</td>
+<td>6</td>
+</tr>
+<tr>
+<td>2015</td>
+<td>Golden State Warriors</td>
+<td>15</td>
+</tr>
+<tr>
+<td>2014</td>
+<td>San Antonio Spurs</td>
+<td>24</td>
+</tr>
+<tr>
+<td>2013</td>
+<td>Miami Heat</td>
+<td>10</td>
+</tr>
+<tr>
+<td>2012</td>
+<td>Miami Heat</td>
+<td>21</td>
+</tr>
+<tr>
+<td>2011</td>
+<td>Dallas Mavericks</td>
+<td>6</td>
+</tr>
+<tr>
+<td>2010</td>
+<td>Los Angeles Lakers</td>
+<td>12</td>
+</tr>
+<tr>
+<td>2009</td>
+<td>Los Angeles Lakers</td>
+<td>17</td>
+</tr>
+<tr>
+<td>2008</td>
+<td>Boston Celtics</td>
+<td>14</td>
+</tr>
+<tr>
+<td>2007</td>
+<td>San Antonio Spurs</td>
+<td>34</td>
+</tr>
+<tr>
+<td>2006</td>
+<td>Miami Heat</td>
+<td>16</td>
+</tr>
+<tr>
+<td>2005</td>
+<td>San Antonio Spurs</td>
+<td>32</td>
+</tr>
+<tr>
+<td>2004</td>
+<td>Detroit Pistons</td>
+<td>20</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>San Antonio Spurs</td>
+<td>38</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Los Angeles Lakers</td>
+<td>15</td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Los Angeles Lakers</td>
+<td>14</td>
+</tr>
+<tr>
+<td>2000</td>
+<td>Los Angeles Lakers</td>
+<td>7</td>
+</tr>
+<tr>
+<td><strong>Overall</strong></td>
+<td></td>
+<td><strong>18</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Looking at the table above, it&rsquo;s no surprise to see that most averages fall in the first round, with the overall average being 18. In order to build champions in the NBA, you need star players and star players are most often found near the top of the draft.</p>
+<p>There are two teams in particular who stand out at the top: the <a href="https://www.basketball-reference.com/teams/CLE/2016.html">2016 Cleveland Cavaliers</a> and the <a href="https://www.basketball-reference.com/teams/DAL/2011.html">2011 Dallas Mavericks</a>, both with an average of six. The Cavaliers won with a foursome of players taken in the top five, Lebron James (pick 1), Kyrie Irving (pick 1), Tristan Thompson (pick 4), and Kevin Love (pick 5). The champion Mavericks had two players taken at pick 2, Jason Kidd and Tyson Chandler, and the rest of their players fell at the end of the top 10; Dirk Nowitzki (pick 9), Shawn Marion (pick 9), and Jason Terry (pick 10).</p>
+<p>The lowest average draft position that appears on the list is 38 (8th pick in the 2nd round) and belongs to the <a href="https://www.basketball-reference.com/teams/SAS/2003.html">2003 San Antonio Spurs</a>. The Spurs’ average here is dragged down by Bruce Bowen (pick 61), Manu Ginobolu (pick 57), and Stephen Jackson (pick 42). The Spurs’ other championship winning teams also have relatively low average draft positions which I think speaks to their ability to identify talent in the 2nd round and develop it. The Spurs have long been lauded for their organizational culture and their ability to consistently be competitive through player development.</p>
+<p>Here&rsquo;s a graphical breakdown of the dataset</p>
+<p><img src="/static/champions.png" alt="Horizontal bar chart of draft position vs count"></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>There’s a lot of clustering near the top of the chart in 1-10 range, and some peaks late in the first round and sporadically throughout the second round. Drafting is only one component of building a championship team and not all the players in the dataset where drafted by the teams they won with. Roster fit, chemistry, coaching, and player development all factor in to how successful a team can be. This is particularly emphasized by the the Spurs champtionship teams' low averages. While high draft picks seem to be component of many championship teams, having an orgainzation that can identify talent and nuture it, is another viable pathway to the Larry O&rsquo;Brien trophy.</p>
+
+        <div class="tags">
+            <h3 class="filedUnder">Filed Under</h3>
+            
+            <p><a href="https://bgrnwd.com/tags/nba/">NBA</a></p>
+            
+            <p><a href="https://bgrnwd.com/tags/basketball/">Basketball</a></p>
+            
+            <p><a href="https://bgrnwd.com/tags/nba-draft/">NBA Draft</a></p>
+            
+        </div>
+    </div>
+</main>
+<footer>
+
+</footer></body>
+</html>
