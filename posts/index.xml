@@ -1,2 +1,137 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog on Brian Greenwood</title><link>https://bgrnwd.com/posts/</link><description>Recent content in Blog on Brian Greenwood</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 13 Apr 2020 00:17:12 -0400</lastBuildDate><atom:link href="https://bgrnwd.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Where are NBA Champions drafted?</title><link>https://bgrnwd.com/posts/nba-champion/</link><pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate><guid>https://bgrnwd.com/posts/nba-champion/</guid><description>This article was updated on December 24, 2020 to include data from the 2019-2020 NBA season, along with some minor edits.
-I recently logged on to my Kaggle profile for the first time in years and stumbled across a &amp;ldquo;dataset&amp;rdquo; I made in 2018. The dataset includes the top five players ranked by playoff minutes from every NBA champion team from 2000 through 2019 and where those players were selected in their respective drafts.</description></item><item><title>Liftoff</title><link>https://bgrnwd.com/posts/liftoff/</link><pubDate>Sat, 25 Jul 2020 00:00:00 +0000</pubDate><guid>https://bgrnwd.com/posts/liftoff/</guid><description>Hi and thanks for checking out my website. This blog will serve as an outlet to write about my interests and side projects. I suspect they will mostly be technical in nature and focus heavily on sports, but I&amp;rsquo;m sure other topics will surface as well. There isn&amp;rsquo;t much here now, but in the future, happy reading!</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog on Brian Greenwood</title><link>https://bgrnwd.com/posts/</link><description>Recent content in Blog on Brian Greenwood</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 13 Apr 2020 00:17:12 -0400</lastBuildDate><atom:link href="https://bgrnwd.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Where are NBA Champions drafted?</title><link>https://bgrnwd.com/posts/nba-champion/</link><pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate><guid>https://bgrnwd.com/posts/nba-champion/</guid><description>&lt;blockquote>
+&lt;p>This article was updated on December 24, 2020 to include data from the 2019-2020 NBA season, along with some minor edits.&lt;/p>
+&lt;/blockquote>
+&lt;p>I recently logged on to my &lt;a href="https://www.kaggle.com/">Kaggle&lt;/a> profile for the first time in years and stumbled across a &amp;ldquo;dataset&amp;rdquo; I made in 2018. The dataset includes the top five players ranked by playoff minutes from every NBA champion team from 2000 through 2019 and where those players were selected in their respective drafts. Using playoff minutes instead of starting lineups provides a truer picture of how champions played throughout their playoff run. The downside to limiting each champion in the dataset to 5 players meant that some important role players did not make the cut. In the case of the 2019 Raptors, Fred VanVleet just missed the cut.&lt;/p>
+&lt;p>Building a championship-winning team is a difficult task and I wanted to see what information could be gleaned by looking at the top of those rosters. Does building a championship team rely on picking projected stars early? Or do certain teams who pick later in the draft just consistently have the ability to identify talent and develop it? Or is it a little bit of both?&lt;/p>
+&lt;h2 id="data">Data&lt;/h2>
+&lt;p>I focused on the NBA champion teams from 2000 through 2019 because this covers all seasons this century and conveniently excludes any championship teams that would have had a player drafted before 1989, the first year the draft went to 2 rounds (1999 champion San Antonio Spurs member &lt;a href="https://www.basketball-reference.com/players/e/eliema01.html">Mario Elie&lt;/a> was the last player who won a championship and was drafted before 1989). Prior to 1989, the draft had many more picks which would have added complexity to the dataset. The current NBA Draft spans 2 rounds of 30 picks. Some players in the dataset are assigned to “pick 61” to account for that fact that they went un-drafted. All data was collected from &lt;a href="https://www.basketball-reference.com/">Basketball Reference&lt;/a> manually (ouch! Were I to do this over again, I would have done this programmatically).&lt;/p>
+&lt;p>I wrote a small script that computes the average draft position for each individual championship team (based on their 5 players with the most playoff minutes played) and the overall average for all 20 NBA championship teams from 2000-2020. No de-duplication was done, so Lebron winning with the Miami Heat in 2012 and 2013 would count twice for pick 1. All fractional picks were rounded to the nearest integer.&lt;/p>
+&lt;h2 id="analysis">Analysis&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Year&lt;/th>
+&lt;th>Team&lt;/th>
+&lt;th>Average Draft Position&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>2020&lt;/td>
+&lt;td>Los Angeles Lakers&lt;/td>
+&lt;td>23&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2019&lt;/td>
+&lt;td>Toronto Raptors&lt;/td>
+&lt;td>32&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2018&lt;/td>
+&lt;td>Golden State Warriors&lt;/td>
+&lt;td>14&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2017&lt;/td>
+&lt;td>Golden State Warriors&lt;/td>
+&lt;td>14&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2016&lt;/td>
+&lt;td>Cleveland Cavaliers&lt;/td>
+&lt;td>6&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2015&lt;/td>
+&lt;td>Golden State Warriors&lt;/td>
+&lt;td>15&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2014&lt;/td>
+&lt;td>San Antonio Spurs&lt;/td>
+&lt;td>24&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2013&lt;/td>
+&lt;td>Miami Heat&lt;/td>
+&lt;td>10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2012&lt;/td>
+&lt;td>Miami Heat&lt;/td>
+&lt;td>21&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2011&lt;/td>
+&lt;td>Dallas Mavericks&lt;/td>
+&lt;td>6&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2010&lt;/td>
+&lt;td>Los Angeles Lakers&lt;/td>
+&lt;td>12&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2009&lt;/td>
+&lt;td>Los Angeles Lakers&lt;/td>
+&lt;td>17&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2008&lt;/td>
+&lt;td>Boston Celtics&lt;/td>
+&lt;td>14&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2007&lt;/td>
+&lt;td>San Antonio Spurs&lt;/td>
+&lt;td>34&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2006&lt;/td>
+&lt;td>Miami Heat&lt;/td>
+&lt;td>16&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2005&lt;/td>
+&lt;td>San Antonio Spurs&lt;/td>
+&lt;td>32&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2004&lt;/td>
+&lt;td>Detroit Pistons&lt;/td>
+&lt;td>20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2003&lt;/td>
+&lt;td>San Antonio Spurs&lt;/td>
+&lt;td>38&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2002&lt;/td>
+&lt;td>Los Angeles Lakers&lt;/td>
+&lt;td>15&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2001&lt;/td>
+&lt;td>Los Angeles Lakers&lt;/td>
+&lt;td>14&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2000&lt;/td>
+&lt;td>Los Angeles Lakers&lt;/td>
+&lt;td>7&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>Overall&lt;/strong>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;strong>19&lt;/strong>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Looking at the table above, it&amp;rsquo;s no surprise to see that most averages fall in the first round, with the overall average being 19. In order to build champions in the NBA, you need star players and star players are most often found near the top of the draft.&lt;/p>
+&lt;p>There are two teams in particular who stand out at the top: the &lt;a href="https://www.basketball-reference.com/teams/CLE/2016.html">2016 Cleveland Cavaliers&lt;/a> and the &lt;a href="https://www.basketball-reference.com/teams/DAL/2011.html">2011 Dallas Mavericks&lt;/a>, both with an average of six. The Cavaliers won with a foursome of players taken in the top five, Lebron James (pick 1), Kyrie Irving (pick 1), Tristan Thompson (pick 4), and Kevin Love (pick 5). The champion Mavericks had two players taken at pick 2, Jason Kidd and Tyson Chandler, and the rest of their players fell at the end of the top 10; Dirk Nowitzki (pick 9), Shawn Marion (pick 9), and Jason Terry (pick 10).&lt;/p>
+&lt;p>The lowest average draft position that appears on the list is 38 (8th pick in the 2nd round) and belongs to the &lt;a href="https://www.basketball-reference.com/teams/SAS/2003.html">2003 San Antonio Spurs&lt;/a>. The Spurs’ average here is dragged down by Bruce Bowen (pick 61), Manu Ginobolu (pick 57), and Stephen Jackson (pick 42). The Spurs’ other championship winning teams also have relatively low average draft positions which I think speaks to their ability to identify talent in the 2nd round and develop it. The Spurs have long been lauded for their organizational culture and their ability to consistently be competitive through player development.&lt;/p>
+&lt;p>Here&amp;rsquo;s a graphical breakdown of the dataset&lt;/p>
+&lt;p>&lt;img src="https://bgrnwd.com/static/champions.png" alt="Horizontal bar chart of draft position vs count">&lt;/p>
+&lt;h2 id="conclusion">Conclusion&lt;/h2>
+&lt;p>There’s a lot of clustering near the top of the chart in 1-10 range, and some peaks late in the first round and sporadically throughout the second round. Drafting is only one component of building a championship team and not all the players in the dataset were drafted by the teams they won with. Roster fit, chemistry, coaching, and player development all factor in to how successful a team can be. This is particularly emphasized by the the Spurs championship teams' low averages. While high draft picks seem to be component of many championship teams, having an organization that can identify talent and nurture it, is another viable pathway to the Larry O&amp;rsquo;Brien trophy.&lt;/p></description></item><item><title>Liftoff</title><link>https://bgrnwd.com/posts/liftoff/</link><pubDate>Sat, 25 Jul 2020 00:00:00 +0000</pubDate><guid>https://bgrnwd.com/posts/liftoff/</guid><description>&lt;p>Hi and thanks for checking out my website. This blog will serve as an outlet to write about my interests and side projects. I suspect they will mostly be technical in nature and focus heavily on sports, but I&amp;rsquo;m sure other topics will surface as well. There isn&amp;rsquo;t much here now, but in the future, happy reading!&lt;/p></description></item></channel></rss>
