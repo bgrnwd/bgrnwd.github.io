@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="en"><head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/png" href="/favicon-32x32.png"><meta name="generator" content="Astro v7.3.3"><!-- Canonical URL --><link rel="canonical" href="https://bgrnwd.com/notes/_aws/cloudwatch/"><!-- Primary Meta Tags --><title></title><meta name="title"><meta name="description"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://bgrnwd.com/notes/_aws/cloudwatch/"><meta property="og:title"><meta property="og:description"><meta property="og:image" content="https://bgrnwd.com/placeholder-social.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://bgrnwd.com/notes/_aws/cloudwatch/"><meta property="twitter:title"><meta property="twitter:description"><meta property="twitter:image" content="https://bgrnwd.com/placeholder-social.jpg"><!-- RSS --><link rel="alternate" type="application/rss+xml" href="https://bgrnwd.com/rss.xml"><link rel="stylesheet" href="/_astro/Footer.CjL7wjem.css"></head><body><nav class="wrapper"><div class="nav-container"><div class="home"><a href="/"><h1 class="nav-title">Brian Greenwood</h1></a></div><div class="menu"><ul><li><a href="/blog">Blog</a></li><li><a href="https://github.com/bgrnwd" target="_blank">
+          Code
+        </a></li><li><a href="/notes">Notes</a></li><li><a href="/articles">Articles & Talks</a></li><li><a href="/rss.xml">RSS</a></li></ul></div></div></nav><main class="wrapper"><div class="single"><h1></h1><h1 id="basics">Basics</h1>
+<ul>
+<li>Globally resilient, secure across all AWS regions</li>
+<li>Own dedicated instance of IAM in each account</li>
+<li>Full trust between account and IAM</li>
+<li>Users
+<ul>
+<li>Humans or applications that need access to AWS account</li>
+</ul>
+</li>
+<li>Groups
+<ul>
+<li>Collections of related users</li>
+</ul>
+</li>
+<li>Roles
+<ul>
+<li>Can be used by AWS services or for granting external access to the account</li>
+<li>Used for uncertain number of entities that may need access</li>
+</ul>
+</li>
+<li>Policies
+<ul>
+<li>Allow or deny access to AWS services only when attached to a user, group, or role</li>
+</ul>
+</li>
+<li>IAM is an identity provider (IDP)</li>
+<li>Authenticates identities</li>
+<li>Then authorizes</li>
+<li>No costs but there are limits</li>
+<li>No direct control on external accounts or users</li>
+<li>Identity federation and MFA</li>
+</ul>
+<div class="tags"><h3 class="filedUnder">Filed Under</h3></div></div></main><footer></footer></body></html>

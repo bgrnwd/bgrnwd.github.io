@@ -5,7 +5,7 @@
   src:
     local("Space Mono Italic"),
     local("SpaceMono-Italic"),
-    url(/font/SpaceMono-Italic) format("truetype");
+    url(/fonts/SpaceMono-Italic.ttf) format("truetype");
 }
 @font-face {
   font-family: "Space Mono";
@@ -14,7 +14,7 @@
   src:
     local("Space Mono Bold Italic"),
     local("SpaceMono-BoldItalic"),
-    url(/fonts/SpaceMono-BoldItalic) format("truetype");
+    url(/fonts/SpaceMono-BoldItalic.ttf) format("truetype");
 }
 @font-face {
   font-family: "Space Mono";
@@ -23,7 +23,7 @@
   src:
     local("Space Mono"),
     local("SpaceMono-Regular"),
-    url(/fonts/SpaceMono-Regular) format("truetype");
+    url(/fonts/SpaceMono-Regular.ttf) format("truetype");
 }
 @font-face {
   font-family: "Space Mono";
@@ -32,5 +32,5 @@
   src:
     local("Space Mono Bold"),
     local("SpaceMono-Bold"),
-    url(/fonts/SpaceMono-Bold) format("truetype");
+    url(/fonts/SpaceMono-Bold.ttf) format("truetype");
 }
